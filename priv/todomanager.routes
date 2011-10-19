@@ -1,0 +1,15 @@
+% Routes file.
+
+% Formats: 
+%     {"/some/route", {"Controller", "Action"}}.
+%     {"/some/route", {"Controller", "Action", [{id, "42"}]}}.
+%     {404, {"Controller", "Action"}}.
+%     {404, {"Controller", "Action", [{id, "42"}]}}.
+
+{"/index/index.json", {"index", "index", [{format, "json"}]}}.
+
+% Front page
+% {"/", {"hello", "world"}}.
+
+% 404 File Not Found handler
+% {404, {"hello", "goodbye"}}.

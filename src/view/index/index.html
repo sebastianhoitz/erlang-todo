@@ -1,0 +1,6 @@
+<h1>Aufgaben:</h1>
+<ul>
+{% for todo in todos %}
+<li id="{{ todo.id }}">{{ todo.subject }}</li>
+{% endfor %}
+</ul>
