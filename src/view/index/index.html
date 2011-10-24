@@ -1,10 +1,23 @@
-<h1>Aufgaben:</h1>
-<form action="/todo/create" method="post">
-	<input type="text" name="subject" placeholder="Enter your todo item">
-	<input type="submit" value="Save">
-</form>
-<ul>
-{% for todo in todos %}
-<li id="{{ todo.id }}">{{ todo.subject }}</li>
-{% endfor %}
-</ul>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/css/style.css">
+	</head>
+	<body>
+		<div id="container">
+			<h1>Aufgaben:</h1>
+			<form action="/todo/create" method="post">
+				<input type="text" name="subject" placeholder="Enter your todo item">
+				<input type="submit" value="Save">
+			</form>
+			<ul>
+				{% for todo in todos %}
+				<li id="{{ todo.id }}">
+					<input type="checkbox" name="todo[]" value="{{ todo.id }}" id="checkbox-{{ todo.id }}">
+					<label for="checkbox-{{todo.id}}">{{ todo.subject }}</label>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+</body>
+</html>

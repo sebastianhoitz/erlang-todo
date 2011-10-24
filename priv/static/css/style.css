@@ -1,0 +1,42 @@
+body, html
+{
+	font-family:Georgia;
+	font-size:16px;
+	background:#f0f0f0;
+}
+
+#container
+{
+	margin:200px auto;
+	padding:3em;
+	width:500px;
+	background:#fff;
+}
+
+#container h1
+{
+	text-align:center;
+}
+
+#container input[type=text]
+{
+	font-size:25px;
+	width:500px;
+}
+
+#container input[type=submit]
+{
+	visibility:hidden;
+}
+
+#container ul
+{
+	list-style:none;
+	padding-left:0;
+	font-size:16px;
+}
+
+#container label:hover
+{
+	cursor:pointer;
+}
