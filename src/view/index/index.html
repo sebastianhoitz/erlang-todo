@@ -2,22 +2,36 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="/static/css/style.css">
+
+		<script type="text/javascript" src="/static/js/lib/jquery/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="/static/js/lib/jquery/jquery.tmpl.js"></script>
+		<!-- SpineJS -->
+		<script type="text/javascript" src="/static/js/lib/spine/spine.js"></script>
+		<script type="text/javascript" src="/static/js/lib/spine/ajax.js"></script>
+		<script type="text/javascript" src="/static/js/lib/spine/local.js"></script>
+
+		<!-- Our own custom app -->
+		<script type="text/javascript" src="/static/js/app.js"></script>
 	</head>
 	<body>
-		<div id="container">
-			<h1>Aufgaben:</h1>
+		<div id="app">
+			<h1>Todos:</h1>
 			<form action="/todo/create" method="post">
 				<input type="text" name="subject" placeholder="Enter your todo item">
 				<input type="submit" value="Save">
 			</form>
-			<ul>
-				{% for todo in todos %}
-				<li id="{{ todo.id }}">
-					<input type="checkbox" name="todo[]" value="{{ todo.id }}" id="checkbox-{{ todo.id }}">
-					<label for="checkbox-{{todo.id}}">{{ todo.subject }}</label>
-				</li>
-				{% endfor %}
+			<ul class="items">
+				<!--{% for todo in todos %}-->
+				<!--<li id="{{ todo.id }}">-->
+					<!--<input type="checkbox" name="todo[]" value="{{ todo.id }}" id="checkbox-{{ todo.id }}">-->
+					<!--<label for="checkbox-{{todo.id}}">{{ todo.subject }}</label>-->
+				<!--</li>-->
+				<!--{% endfor %}-->
 			</ul>
+
+			<footer>
+				<span class="countVal">0</span> todos left.
+			</footer>
 		</div>
 </body>
 </html>

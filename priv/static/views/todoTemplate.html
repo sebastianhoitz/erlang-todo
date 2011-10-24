@@ -1,0 +1,6 @@
+		<script type="text/x-jquery-tmpl" id="todoTemplate">
+			<li id="${id}">
+			<input type="checkbox" name="todo[]" value="${id}" id="checkbox-${id}" {{if done}}checked="checked"{{/if}}>
+				<label for="checkbox-${id}">${subject}</label>
+			</li>
+		</script>
