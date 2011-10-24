@@ -9,7 +9,7 @@
 {"/index/index.json", {"index", "index", [{format, "json"}]}}.
 
 % Front page
-% {"/", {"hello", "world"}}.
+{"/", {"index", "index"}}.
 
 % 404 File Not Found handler
 % {404, {"hello", "goodbye"}}.

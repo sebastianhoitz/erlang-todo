@@ -1,4 +1,8 @@
 <h1>Aufgaben:</h1>
+<form action="/todo/create" method="post">
+	<input type="text" name="subject" placeholder="Enter your todo item">
+	<input type="submit" value="Save">
+</form>
 <ul>
 {% for todo in todos %}
 <li id="{{ todo.id }}">{{ todo.subject }}</li>
