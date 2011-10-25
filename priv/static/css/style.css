@@ -56,3 +56,24 @@ body, html
 {
 	cursor:pointer;
 }
+
+#app li .edit
+{
+	display:none;
+}
+
+#app li:hover
+{
+	background:lightyellow;
+}
+
+#app li.editing .edit
+{
+	display:block;
+}
+
+#app li.editing label,
+#app li.editing input[type=checkbox]
+{
+	display:none;
+}

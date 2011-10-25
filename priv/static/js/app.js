@@ -32,7 +32,13 @@
   Todos = (function() {
     __extends(Todos, Spine.Controller);
     Todos.prototype.events = {
-      "change input[type=checkbox]": "toggle"
+      "change input[type=checkbox]": "toggle",
+      "dblclick": "edit",
+      "blur input[type=text]": "close",
+      "keypress input[type=text]": "blurOnEnter"
+    };
+    Todos.prototype.elements = {
+      "input[type=text]": "input"
     };
     function Todos() {
       this.remove = __bind(this.remove, this);
@@ -47,6 +53,21 @@
     Todos.prototype.toggle = function() {
       this.item.done = !this.item.done;
       return this.item.save();
+    };
+    Todos.prototype.edit = function() {
+      this.el.addClass("editing");
+      return this.input.focus();
+    };
+    Todos.prototype.blurOnEnter = function(e) {
+      if (e.keyCode === 13) {
+        return e.target.blur();
+      }
+    };
+    Todos.prototype.close = function() {
+      this.el.removeClass("editing");
+      return this.item.updateAttributes({
+        subject: this.input.val()
+      });
     };
     Todos.prototype.remove = function() {
       return this.el.remove();

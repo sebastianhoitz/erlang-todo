@@ -17,6 +17,13 @@ class Todo extends Spine.Model
 class Todos extends Spine.Controller
 	events:
 		"change input[type=checkbox]": "toggle"
+		"dblclick": "edit"
+		"blur input[type=text]": "close"
+		"keypress input[type=text]": "blurOnEnter"
+	
+	elements:
+		"input[type=text]": "input"
+
 	constructor: ->
 		super
 		@item.bind("update", @render)
@@ -29,6 +36,17 @@ class Todos extends Spine.Controller
 	toggle: ->
 		@item.done = !@item.done
 		@item.save()
+	
+	edit: ->
+		@el.addClass("editing")
+		@input.focus()
+	
+	blurOnEnter: (e) ->
+		if e.keyCode is 13 then e.target.blur()
+	
+	close: ->
+		@el.removeClass("editing")
+		@item.updateAttributes({subject: @input.val()})
 
 	remove: =>
 		@el.remove()
