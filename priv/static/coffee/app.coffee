@@ -1,9 +1,11 @@
 $ = jQuery
 
 class Todo extends Spine.Model
-	@configure "Todo", "subject", "done"
+	@configure "Todo", "id", "subject", "done"
 
-	@extend Spine.Model.Local
+	@extend Spine.Model.Ajax
+
+	@url: "/todo/index"
 
 	@active: ->
 		@select (item) -> !item.done

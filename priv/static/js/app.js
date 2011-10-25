@@ -14,8 +14,9 @@
     function Todo() {
       Todo.__super__.constructor.apply(this, arguments);
     }
-    Todo.configure("Todo", "subject", "done");
-    Todo.extend(Spine.Model.Local);
+    Todo.configure("Todo", "id", "subject", "done");
+    Todo.extend(Spine.Model.Ajax);
+    Todo.url = "/todo/index";
     Todo.active = function() {
       return this.select(function(item) {
         return !item.done;

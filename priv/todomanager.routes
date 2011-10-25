@@ -6,10 +6,10 @@
 %     {404, {"Controller", "Action"}}.
 %     {404, {"Controller", "Action", [{id, "42"}]}}.
 
-{"/index/index.json", {"index", "index", [{format, "json"}]}}.
-
 % Front page
 {"/", {"index", "index"}}.
+
+{"/todos", {"todo", "index"}}.
 
 % 404 File Not Found handler
 % {404, {"hello", "goodbye"}}.
